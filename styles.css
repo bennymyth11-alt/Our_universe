@@ -274,7 +274,7 @@ h1, h2 { text-shadow: 0 0 34px rgba(217,143,166,.1); }
 .letter-closing p { margin: 0; opacity: 0; filter: blur(6px); transform: translateY(16px); transition: opacity 1s ease, filter 1s ease, transform 1s ease; }
 .closing-line { font-family: var(--serif); font-size: clamp(1.15rem, 2vw, 1.45rem); font-style: italic; letter-spacing: .02em; }
 .closing-phrase { margin-top: 1.2rem !important; color: #e6b294; font-family: var(--script); font-size: clamp(2rem, 4vw, 3.2rem); }
-.closing-signature { margin-top: .35rem !important; color: #f0c78f; font-family: var(--script); font-size: clamp(3.8rem, 8vw, 6.4rem); line-height: .95; text-shadow: 0 0 28px rgba(216,167,106,.24); clip-path: inset(0 100% 0 0); transition: opacity 1.1s ease, filter 1.1s ease, transform 1.1s ease, clip-path 2.2s cubic-bezier(.65,0,.35,1) !important; }
+.closing-signature { margin-top: .35rem !important; padding: 0 .12em .16em; color: #f0c78f; font-family: var(--script); font-size: clamp(3.8rem, 8vw, 6.4rem); line-height: 1.12; text-shadow: 0 0 28px rgba(216,167,106,.24); clip-path: inset(0 100% 0 0); transition: opacity 1.1s ease, filter 1.1s ease, transform 1.1s ease, clip-path 2.2s cubic-bezier(.65,0,.35,1) !important; }
 .closing-star { display: block; margin-top: 2.6rem; color: #d8a76a; font-size: 1rem; opacity: 0; transform: scale(.6); transition: opacity .9s ease, transform .9s ease; }
 .letter-wrap.visible .closing-line { opacity: 1; filter: blur(0); transform: none; transition-delay: 5s; }
 .letter-wrap.visible .closing-phrase { opacity: 1; filter: blur(0); transform: none; transition-delay: 5.8s; }
