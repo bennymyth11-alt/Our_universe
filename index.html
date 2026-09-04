@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#160e18" />
+  <meta name="description" content="A private little universe made for one very special person." />
+  <title>A Little Universe For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Parisienne&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <main id="experience" class="experience" aria-hidden="true">
+    <section class="hero section-light" id="hero" aria-labelledby="hero-title">
+      <div class="hero-orbit orbit-left" aria-hidden="true">✦</div>
+      <div class="hero-orbit orbit-right" aria-hidden="true">✧</div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">A small universe, made for one person</p>
+        <h1 id="hero-title">You are my<br /><em>favorite place.</em></h1>
+        <p id="hero-subtitle" class="hero-subtitle">For the girl who somehow became my favorite part of every day.</p>
+        <a class="scroll-cue" href="#quiz"><span>Begin our little story</span><span class="scroll-arrow">↓</span></a>
+      </div>
+      <div class="hero-sun" aria-hidden="true"></div>
+      <div id="hero-particles" class="particle-field" aria-hidden="true"></div>
+    </section>
+
+    <section class="section quiz-section" id="quiz" aria-labelledby="quiz-title">
+      <div class="section-intro reveal">
+        <p class="eyebrow">A tiny test of us</p>
+        <h2 id="quiz-title">How well do you know<br /><em>our little world?</em></h2>
+      </div>
+      <div class="quiz-shell reveal">
+        <div class="quiz-meta"><span id="question-number">Question 1 of 5</span><span id="quiz-score">0 hearts</span></div>
+        <div class="progress-track"><div id="quiz-progress" class="progress-fill"></div></div>
+        <div id="quiz-card" class="quiz-card" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="story-section" id="memories" aria-labelledby="story-title">
+      <div class="story-intro reveal">
+        <p class="eyebrow">Little chapters about you</p>
+        <h2 id="story-title">The things I<br /><em>adore.</em></h2>
+      </div>
+      <div id="story-scenes" class="story-scenes" aria-live="polite"></div>
+      <nav class="story-progress" aria-label="Story chapters" id="story-progress"></nav>
+    </section>
+
+    <section class="section letter-section" id="letter" aria-labelledby="letter-title">
+      <div class="letter-glow" aria-hidden="true"></div>
+      <div class="letter-wrap reveal">
+        <p class="eyebrow">PARA NIMO</p>
+        <h2 id="letter-title">Para sa <em>imo.</em></h2>
+        <figure class="final-photo-wrap">
+          <img id="final-photo" class="final-photo" src="" alt="A photograph of us" />
+        </figure>
+        <article id="love-letter" class="love-letter" aria-label="Bisaya love letter"></article>
+      </div>
+    </section>
+
+    <section class="finale" aria-labelledby="finale-title">
+      <div class="final-starfield" aria-hidden="true"></div>
+      <div class="finale-content reveal">
+        <div class="final-heart" aria-hidden="true">♥</div>
+        <p class="eyebrow">And this is only the beginning</p>
+        <h2 id="finale-title">Still choosing<br /><em>you.</em></h2>
+        <p>Always, in every version of the story.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="gate" class="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+    <div class="gate-backdrop" aria-hidden="true"></div>
+    <div class="gate-card">
+      <div class="gate-mark" aria-hidden="true">✦</div>
+      <p class="eyebrow">A little secret awaits...</p>
+      <h1 id="gate-title">Only you<br /><em>can enter.</em></h1>
+      <p class="gate-copy">You already know the answer. <span aria-hidden="true">♡</span></p>
+      <form id="gate-form" novalidate>
+        <label class="sr-only" for="password-input">Secret password</label>
+        <div class="password-wrap">
+          <input id="password-input" type="password" autocomplete="off" placeholder="the secret word" />
+          <button id="toggle-password" class="icon-button" type="button" aria-label="Show password">◉</button>
+        </div>
+        <button class="primary-button" type="submit"><span>Open the door</span><span aria-hidden="true">↗</span></button>
+        <p id="gate-message" class="gate-message" role="status"></p>
+      </form>
+      <p class="gate-note">A front-end love note, not real security.</p>
+    </div>
+  </div>
+
+  <div id="challenge" class="challenge" aria-hidden="true">
+    <div class="challenge-heading">
+      <p class="eyebrow">One tiny thing first</p>
+      <h2>Catch the little<br /><em>feelings.</em></h2>
+      <p id="challenge-copy">Tap or catch all five to unlock the rest.</p>
+      <div id="challenge-count" class="challenge-count">0 / 5</div>
+    </div>
+    <div id="challenge-field" class="challenge-field"></div>
+  </div>
+
+  <button id="audio-toggle" class="audio-toggle" type="button" aria-label="Mute music" hidden>♫</button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <audio id="romantic-audio" preload="none"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
