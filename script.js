@@ -4,7 +4,7 @@
 const CONFIG = {
   password: "letmein",
   coupleImage: "us.png",
-  audio: { enabled: true, source: "assets/audio/our-love-song.mp3.mp3", startVolume: 0.32, finalVolume: 0.16 },
+  audio: { enabled: true, source: "./our-love-song.mp3", startVolume: 0.32, finalVolume: 0.16 },
   messages: {
     wrongPassword: "Nopeee. You know this one. ♡",
     correctPassword: "I knew you'd remember. ♡",
