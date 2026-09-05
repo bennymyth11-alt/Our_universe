@@ -289,3 +289,136 @@ h1, h2 { text-shadow: 0 0 34px rgba(217,143,166,.1); }
 @media (prefers-reduced-motion: reduce) {
   .final-photo-wrap, .final-photo, .love-letter .letter-paragraph, .letter-closing p, .closing-star { opacity: 1; filter: none; transform: none; transition: none; }.closing-signature { clip-path: inset(0 0 0 0); }
 }
+
+/* Responsive type and touch controls */
+html,
+body { max-width: 100%; }
+
+button,
+input { -webkit-tap-highlight-color: transparent; }
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+button:focus { outline: none; }
+button:focus-visible,
+input:focus-visible,
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+h1,
+h2,
+h3 {
+  max-width: 100%;
+  padding-inline: .14em;
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+
+.section {
+  padding-top: clamp(7rem, 12vw, 12rem);
+  padding-right: max(7vw, 24px, env(safe-area-inset-right));
+  padding-bottom: clamp(7rem, 12vw, 12rem);
+  padding-left: max(7vw, 24px, env(safe-area-inset-left));
+}
+
+.gate {
+  padding-top: max(24px, env(safe-area-inset-top));
+  padding-right: max(24px, env(safe-area-inset-right));
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+  padding-left: max(24px, env(safe-area-inset-left));
+}
+
+.hero {
+  min-height: 100svh;
+  padding-top: max(8rem, calc(8rem + env(safe-area-inset-top)));
+  padding-bottom: max(4rem, env(safe-area-inset-bottom));
+}
+
+.hero-content {
+  width: 100%;
+  padding-right: max(24px, env(safe-area-inset-right));
+  padding-left: max(24px, env(safe-area-inset-left));
+}
+
+.hero-content,
+.section-intro,
+.story-intro,
+.letter-wrap,
+.finale-content,
+.challenge-heading { min-width: 0; }
+
+.hero h1 { font-size: clamp(3.2rem, 11vw, 9.5rem); line-height: 1; }
+.section-intro h2,
+.story-intro h2 { line-height: 1; }
+.letter-wrap h2,
+.finale h2,
+.challenge-heading h2 { line-height: 1; }
+.scene-content h3 { line-height: .98; }
+
+.story-scene {
+  padding-right: max(7vw, 24px, env(safe-area-inset-right));
+  padding-left: max(7vw, 24px, env(safe-area-inset-left));
+}
+
+.scene-next,
+.quiz-next,
+.primary-button,
+.answer-button,
+.icon-button,
+.audio-toggle,
+.story-progress button,
+.cute-object {
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.scene-next:active,
+.quiz-next:active,
+.primary-button:active,
+.answer-button:active,
+.icon-button:active,
+.audio-toggle:active,
+.story-progress button:active,
+.cute-object:active { outline: none; }
+
+.scene-next:focus-visible,
+.quiz-next:focus-visible,
+.primary-button:focus-visible,
+.answer-button:focus-visible,
+.icon-button:focus-visible,
+.audio-toggle:focus-visible,
+.story-progress button:focus-visible,
+.cute-object:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+@media (max-width: 780px) {
+  .section { padding-right: max(22px, env(safe-area-inset-right)); padding-left: max(22px, env(safe-area-inset-left)); }
+  .hero { padding-top: max(6rem, calc(6rem + env(safe-area-inset-top))); }
+  .hero h1 { font-size: clamp(3.2rem, 15vw, 6rem); }
+  .section-intro h2,
+  .story-intro h2,
+  .letter-wrap h2,
+  .finale h2,
+  .challenge-heading h2 { font-size: clamp(3rem, 14vw, 6rem); }
+  .story-scene { padding-right: max(22px, env(safe-area-inset-right)); padding-left: max(22px, env(safe-area-inset-left)); }
+  .scene-content h3 { font-size: clamp(3.1rem, 16vw, 6rem); }
+  .challenge-heading { padding-right: max(24px, env(safe-area-inset-right)); padding-left: max(24px, env(safe-area-inset-left)); }
+  .finale { padding-bottom: max(8rem, calc(8rem + env(safe-area-inset-bottom))); }
+  .audio-toggle { right: max(24px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); }
+}
+
+@media (min-width: 781px) and (max-width: 1194px) {
+  .section { padding-top: clamp(8rem, 11vw, 10rem); padding-bottom: clamp(8rem, 11vw, 10rem); }
+  .hero h1 { font-size: clamp(4.5rem, 9vw, 7.5rem); }
+  .section-intro h2,
+  .story-intro h2,
+  .letter-wrap h2,
+  .finale h2,
+  .challenge-heading h2 { font-size: clamp(4rem, 7.5vw, 6.8rem); }
+  .scene-content h3 { font-size: clamp(4rem, 7.5vw, 7.2rem); }
+  .story-scene { padding-top: 8rem; padding-bottom: 9rem; }
+}
