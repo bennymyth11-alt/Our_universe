@@ -2,7 +2,7 @@
    CUSTOMIZATION: YOUR PRIVATE LOVE NOTE
    ======================================== */
 const CONFIG = {
-  password: "letmein",
+  password: "4ft9LOLtinyhuman",
   coupleImage: "us.png",
   audio: { enabled: true, source: "./our-love-song.mp3", startVolume: 0.32, finalVolume: 0.16 },
   messages: {
