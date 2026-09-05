@@ -72,6 +72,8 @@ function setupGate() {
   const input = $("#password-input");
   const message = $("#gate-message");
   const toggle = $("#toggle-password");
+  const audio = $("#romantic-audio");
+  const audioToggle = $("#audio-toggle");
 
   toggle.addEventListener("click", () => {
     const isPassword = input.type === "password";
@@ -93,7 +95,32 @@ function setupGate() {
 
     message.textContent = CONFIG.messages.correctPassword;
     form.querySelector(".primary-button").disabled = true;
-    startAudio();
+    if (CONFIG.audio.enabled && CONFIG.audio.source && !state.audioStarted) {
+      state.audioStarted = true;
+      audio.src = CONFIG.audio.source;
+      audio.volume = 0;
+      audio.muted = false;
+      const playback = audio.play();
+      playback.then(() => {
+        audioToggle.hidden = false;
+        fadeAudioTo(CONFIG.audio.startVolume);
+      }).catch(() => {
+        state.audioStarted = false;
+        audioToggle.hidden = true;
+      });
+      audioToggle.onclick = () => {
+        state.audioMuted = !state.audioMuted;
+        if (state.audioMuted) {
+          audio.pause();
+          audioToggle.textContent = "×";
+          audioToggle.setAttribute("aria-label", "Unmute music");
+        } else {
+          audio.play().catch(() => {});
+          audioToggle.textContent = "♫";
+          audioToggle.setAttribute("aria-label", "Mute music");
+        }
+      };
+    }
     window.setTimeout(() => {
       gate.classList.add("is-leaving");
       $("#experience").classList.add("is-visible");
@@ -103,36 +130,6 @@ function setupGate() {
   });
 
   input.focus();
-}
-
-function startAudio() {
-  const audio = $("#romantic-audio");
-  const toggle = $("#audio-toggle");
-  if (!CONFIG.audio.enabled || !CONFIG.audio.source) return;
-  if (state.audioStarted) return;
-  state.audioStarted = true;
-  audio.src = CONFIG.audio.source;
-  audio.volume = 0;
-  audio.muted = false;
-  audio.play().then(() => {
-    toggle.hidden = false;
-    fadeAudioTo(CONFIG.audio.startVolume);
-  }).catch(() => {
-    state.audioStarted = false;
-    toggle.hidden = true;
-  });
-  toggle.onclick = () => {
-    state.audioMuted = !state.audioMuted;
-    if (state.audioMuted) {
-      audio.pause();
-      toggle.textContent = "×";
-      toggle.setAttribute("aria-label", "Unmute music");
-    } else {
-      audio.play().catch(() => {});
-      toggle.textContent = "♫";
-      toggle.setAttribute("aria-label", "Mute music");
-    }
-  };
 }
 
 function fadeAudioTo(targetVolume, duration = 1800) {
